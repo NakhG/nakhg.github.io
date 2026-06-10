@@ -7,138 +7,188 @@
 <meta name="description" content="Analytics leader. I deliver analytics as a service, as products, and as a platform.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F8F4EB;
-    --paper2:#F1EBDE;
-    --ink:#23262B;
-    --ink2:#54565C;
-    --muted:#8A857A;
-    --rust:#B5502A;
-    --rust-d:#93401F;
-    --line:#E2DACA;
-    --max:980px;
+    --bg:#FAFAF7;
+    --ink:#0E0F12;
+    --ink2:#494C54;
+    --muted:#888B93;
+    --line:#E7E7E2;
+    --hl:#D4FF3F;          /* highlighter */
+    --cyan:#4FE3FF;
+    --violet:#B49CFF;
+    --holo:linear-gradient(110deg,#D4FF3F 0%,#4FE3FF 45%,#B49CFF 100%);
+    --glass:rgba(255,255,255,.6);
+    --max:1000px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Archivo",system-ui,sans-serif;
-    background:var(--paper);color:var(--ink);
-    font-size:16px;line-height:1.65;
+    font-family:"Inter",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);
+    font-size:15.5px;line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--rust);color:var(--paper)}
+  ::selection{background:var(--hl);color:var(--ink)}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-  .serif{font-family:"Fraunces",Georgia,serif}
+  .disp{font-family:"Schibsted Grotesk",system-ui,sans-serif}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+  mark{background:linear-gradient(transparent 52%, var(--hl) 52%, var(--hl) 94%, transparent 94%);color:inherit;padding:0 .08em}
 
-  /* ---- top bar ---- */
-  .bar{position:sticky;top:0;z-index:40;background:rgba(248,244,235,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .bar-in{max-width:var(--max);margin:0 auto;padding:14px 28px;display:flex;align-items:baseline;gap:18px}
-  .bar .nm{font-family:"Fraunces",serif;font-weight:700;font-size:17px}
-  .bar nav{margin-left:auto;display:flex;gap:18px;font-size:13.5px;font-weight:600;color:var(--ink2)}
-  .bar nav a{padding:4px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
-  .bar nav a:hover{color:var(--rust-d);border-color:var(--rust)}
-  @media(max-width:720px){.bar nav .opt{display:none}}
+  .glyph{display:inline-flex;vertical-align:middle}
+  .glyph svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block}
 
-  /* ---- hero ---- */
-  .hero{padding:84px 0 56px;border-bottom:1px solid var(--line)}
-  .kicker{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:18px}
-  h1{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:-.015em;max-width:18ch}
-  h1 em{font-style:italic;color:var(--rust)}
-  .lede{margin-top:26px;max-width:62ch;font-size:18px;line-height:1.7;color:var(--ink2)}
-  .hero-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14px;color:var(--muted);font-weight:500}
-  .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;font-weight:600;font-size:14.5px;border:1.5px solid var(--ink);border-radius:2px;transition:background .15s,color .15s,border-color .15s}
-  .btn:hover{background:var(--ink);color:var(--paper)}
-  .btn.primary{background:var(--rust);border-color:var(--rust);color:#fff}
-  .btn.primary:hover{background:var(--rust-d);border-color:var(--rust-d)}
-  .btn svg{width:16px;height:16px;fill:currentColor}
+  /* ---- glass nav ---- */
+  .bar{position:sticky;top:10px;z-index:40;pointer-events:none}
+  .bar-in{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .bar-glass{
+    pointer-events:auto;
+    display:flex;align-items:center;gap:18px;
+    background:var(--glass);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
+    border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 1px rgba(14,15,18,.04),0 8px 24px rgba(14,15,18,.06);
+    border-radius:14px;padding:11px 18px;
+  }
+  .bar .nm{font-family:"Schibsted Grotesk";font-weight:800;font-size:15px;letter-spacing:-.01em}
+  .bar nav{margin-left:auto;display:flex;gap:4px;font-size:13px;font-weight:600;color:var(--ink2)}
+  .bar nav a{padding:5px 10px;border-radius:8px;transition:background .15s,color .15s}
+  .bar nav a:hover{background:rgba(14,15,18,.06);color:var(--ink)}
+  @media(max-width:760px){.bar nav .opt{display:none}}
 
-  /* ---- stat band ---- */
-  .stats{border-bottom:1px solid var(--line);background:var(--paper2)}
-  .stats-in{max-width:var(--max);margin:0 auto;padding:30px 28px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
-  @media(max-width:880px){.stats-in{grid-template-columns:repeat(2,1fr)}}
-  .stat .v{font-family:"Fraunces",serif;font-weight:600;font-size:30px;line-height:1.05;color:var(--ink)}
-  .stat .v .u{color:var(--rust)}
-  .stat .l{margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--muted);font-weight:500}
-  .spark{display:block;margin-top:6px}
-  .spark path{stroke:var(--rust);stroke-width:2.5;fill:none;stroke-linecap:round}
-  .spark circle{fill:var(--rust)}
+  /* ---- hero with gradient mesh ---- */
+  .hero{position:relative;padding:96px 0 64px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:-40% -10% auto;height:120%;z-index:0;
+    background:
+      radial-gradient(38% 42% at 78% 28%, rgba(180,156,255,.32), transparent 70%),
+      radial-gradient(34% 40% at 60% 70%, rgba(79,227,255,.26), transparent 70%),
+      radial-gradient(30% 36% at 88% 64%, rgba(212,255,63,.38), transparent 70%);
+    filter:blur(34px);
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{font-family:"JetBrains Mono";font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-bottom:20px;display:flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--ink)}
+  h1{font-family:"Schibsted Grotesk";font-weight:800;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-.03em;max-width:19ch}
+  .lede{margin-top:24px;max-width:62ch;font-size:17px;line-height:1.7;color:var(--ink2)}
+  .hero-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 24px;font-family:"JetBrains Mono";font-size:12px;color:var(--muted)}
+  .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;font-weight:600;font-size:14px;border-radius:11px;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s,background .15s,color .15s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(14,15,18,.12)}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn.primary:hover{background:#23252b}
+  .btn svg{width:15px;height:15px;fill:currentColor}
+
+  /* ---- stat band: glass with holo edge ---- */
+  .stats{padding:0 0 64px}
+  .stats-card{
+    position:relative;border-radius:18px;background:var(--glass);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.75);box-shadow:0 12px 36px rgba(14,15,18,.07);
+    padding:28px 30px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;
+  }
+  .stats-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:18px 18px 0 0;background:var(--holo)}
+  @media(max-width:880px){.stats-card{grid-template-columns:repeat(2,1fr)}}
+  .stat .v{font-family:"Schibsted Grotesk";font-weight:800;font-size:29px;letter-spacing:-.02em}
+  .stat .l{margin-top:5px;font-size:12px;line-height:1.5;color:var(--muted)}
+  .spark path{stroke:var(--ink);stroke-width:2.4;fill:none;stroke-linecap:round}
+  .spark circle{fill:var(--ink)}
+  .spark .pop{fill:var(--hl);stroke:var(--ink);stroke-width:1.4}
 
   /* ---- sections ---- */
-  section{padding:70px 0;border-bottom:1px solid var(--line)}
-  .sec-kicker{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:12px}
-  h2{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(28px,4vw,38px);letter-spacing:-.01em;margin-bottom:14px}
-  .sec-intro{max-width:64ch;color:var(--ink2);font-size:16.5px}
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  .sec-eyebrow{font-family:"JetBrains Mono";font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);display:flex;align-items:center;gap:9px;margin-bottom:14px}
+  .sec-eyebrow .glyph{font-size:15px;color:var(--ink)}
+  h2{font-family:"Schibsted Grotesk";font-weight:800;font-size:clamp(26px,3.8vw,36px);letter-spacing:-.025em;margin-bottom:14px}
+  .sec-intro{max-width:64ch;color:var(--ink2)}
 
   /* ---- triptych ---- */
-  .trip{margin-top:44px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+  .trip{margin-top:42px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
   @media(max-width:880px){.trip{grid-template-columns:1fr}}
-  .mode{padding:8px 30px 8px 0;border-left:none}
-  .trip .mode + .mode{border-left:1px solid var(--line);padding-left:30px}
-  @media(max-width:880px){
-    .trip .mode + .mode{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:28px;margin-top:28px}
-    .mode{padding-right:0}
-  }
-  .mode h3{font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:24px;color:var(--rust-d);margin-bottom:10px}
-  .mode .what{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.5}
-  .mode .case{font-size:14.5px;color:var(--ink2);line-height:1.65}
+  .mode{border:1px solid var(--line);background:#fff;border-radius:16px;padding:26px 24px;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .mode:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(14,15,18,.08);border-color:#dadad4}
+  .mode .tag{font-family:"JetBrains Mono";font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:inline-block;padding:4px 9px;border-radius:7px;background:var(--hl);margin-bottom:14px}
+  .mode h3{font-family:"Schibsted Grotesk";font-weight:700;font-size:21px;letter-spacing:-.015em;margin-bottom:8px}
+  .mode .what{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.5}
+  .mode .case{font-size:13.5px;color:var(--ink2);line-height:1.65}
   .mode .case b{color:var(--ink);font-weight:600}
-  .mode .case + .case{margin-top:12px}
+  .mode .case + .case{margin-top:11px}
 
-  /* ---- how I think ---- */
-  .think{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:40px}
+  /* ---- how I think + reading list ---- */
+  .think{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:38px}
   @media(max-width:880px){.think{grid-template-columns:1fr}}
-  .idea h3{font-family:"Fraunces",serif;font-weight:600;font-size:20px;margin-bottom:10px}
-  .idea p{font-size:14.5px;color:var(--ink2)}
-  .reading{margin-top:44px;padding-top:24px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted);max-width:74ch}
-  .reading b{color:var(--ink2);font-weight:600}
+  .idea h3{font-family:"Schibsted Grotesk";font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:9px}
+  .idea p{font-size:14px;color:var(--ink2)}
+
+  details.reading{margin-top:44px;border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+  details.reading summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;
+    padding:18px 22px;font-family:"Schibsted Grotesk";font-weight:700;font-size:16px;
+    transition:background .15s;
+  }
+  details.reading summary::-webkit-details-marker{display:none}
+  details.reading summary:hover{background:#FCFCF9}
+  details.reading summary .hint{margin-left:auto;font-family:"JetBrains Mono";font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  details.reading[open] summary .hint .open-t,details.reading summary .hint .close-t{display:none}
+  details.reading[open] summary .hint .close-t{display:inline}
+  details.reading summary .glyph{font-size:18px;transition:transform .2s}
+  details.reading[open] summary .glyph{transform:rotate(45deg)}
+  .reading-body{padding:6px 22px 26px;border-top:1px solid var(--line)}
+  .reading-note{font-size:13.5px;color:var(--ink2);max-width:74ch;padding:14px 0 6px}
+  .shelf{display:grid;grid-template-columns:1fr 1fr;gap:6px 36px;margin-top:10px}
+  @media(max-width:760px){.shelf{grid-template-columns:1fr}}
+  .shelf-g{break-inside:avoid;padding:10px 0}
+  .shelf-g h4{font-family:"JetBrains Mono";font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .shelf-g ul{list-style:none}
+  .shelf-g li{font-size:13px;color:var(--ink2);padding:2.5px 0;line-height:1.5}
+  .shelf-g li i{font-style:italic;color:var(--ink)}
 
   /* ---- experience ---- */
-  .job{padding:34px 0;border-top:1px solid var(--line)}
-  .job:first-of-type{border-top:none;padding-top:10px}
+  .job{padding:32px 0;border-top:1px solid var(--line)}
+  .job:first-of-type{border-top:none;padding-top:8px}
   .job-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 18px}
-  .job .co{font-family:"Fraunces",serif;font-weight:700;font-size:21px}
-  .job .when{font-size:13.5px;font-weight:600;color:var(--rust-d);white-space:nowrap}
-  .job .role-t{margin-top:2px;font-size:15px;font-weight:600;color:var(--ink2)}
-  .job .loc{font-size:13px;color:var(--muted)}
-  .job .pos{margin-top:10px;font-size:13.5px;font-style:italic;color:var(--muted);max-width:78ch}
-  .job ul{list-style:none;margin-top:16px;max-width:80ch}
-  .job li{position:relative;padding-left:22px;margin-bottom:11px;font-size:14.5px;color:var(--ink2);line-height:1.65}
-  .job li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:2px;background:var(--rust)}
+  .job .co{font-family:"Schibsted Grotesk";font-weight:700;font-size:20px;letter-spacing:-.015em}
+  .job .when{font-family:"JetBrains Mono";font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap}
+  .job .role-t{margin-top:2px;font-size:14.5px;font-weight:600;color:var(--ink2)}
+  .job .loc{font-family:"JetBrains Mono";font-size:11.5px;color:var(--muted)}
+  .job .pos{margin-top:9px;font-size:13px;font-style:italic;color:var(--muted);max-width:78ch}
+  .job ul{list-style:none;margin-top:15px;max-width:82ch}
+  .job li{position:relative;padding-left:22px;margin-bottom:10px;font-size:14px;color:var(--ink2);line-height:1.65}
+  .job li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:3px;background:var(--hl);border:1px solid var(--ink);border-radius:2px}
   .job li b{color:var(--ink);font-weight:600}
-  .earlier{padding:22px 0 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+  .earlier{padding:20px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 
   /* ---- skills / edu ---- */
-  .cols{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .cols{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
   @media(max-width:720px){.cols{grid-template-columns:1fr}}
-  .grp{margin-bottom:22px}
-  .grp-h{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .grp{margin-bottom:20px}
+  .grp-h{font-family:"JetBrains Mono";font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
   .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{font-size:12.5px;font-weight:500;color:var(--ink2);border:1px solid var(--line);background:#fff;border-radius:2px;padding:4px 10px}
-  .edu-d{font-family:"Fraunces",serif;font-weight:600;font-size:17px}
-  .edu-s{font-size:13px;color:var(--muted);margin-bottom:14px}
-  .cert{font-size:14px;color:var(--ink2);padding:7px 0;border-bottom:1px dashed var(--line)}
-  .cert .tag{font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--rust-d);margin-left:8px}
+  .chip{font-size:12.5px;font-weight:500;color:var(--ink2);border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;transition:border-color .15s,background .15s}
+  .chip:hover{border-color:var(--ink);background:var(--hl)}
+  .edu-d{font-family:"Schibsted Grotesk";font-weight:700;font-size:16px}
+  .edu-s{font-size:12.5px;color:var(--muted);margin-bottom:13px;font-family:"JetBrains Mono"}
+  .cert{font-size:13.5px;color:var(--ink2);padding:7px 0;border-bottom:1px dashed var(--line);display:flex;align-items:center;gap:8px}
+  .cert .glyph{font-size:15px;color:var(--ink)}
+  .cert .tag{margin-left:auto;font-family:"JetBrains Mono";font-size:9.5px;font-weight:600;letter-spacing:.06em;background:var(--hl);padding:2px 7px;border-radius:5px}
 
-  footer{padding:44px 0 64px;text-align:left}
+  footer{padding:46px 0 64px;border-top:1px solid var(--line)}
   footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;font-size:13.5px;color:var(--muted)}
-  footer a{color:var(--rust-d);font-weight:600;border-bottom:1px solid var(--line)}
-  footer a:hover{border-color:var(--rust-d)}
+  footer a{font-weight:600;color:var(--ink);background:linear-gradient(transparent 60%,var(--hl) 60%,var(--hl) 92%,transparent 92%)}
 
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  .anim{opacity:0;animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
-  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}
-  @media(prefers-reduced-motion:reduce){.anim{animation:none;opacity:1}}
-  a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+  .anim{opacity:0;animation:rise .55s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.14s}.d3{animation-delay:.23s}
+  @media(prefers-reduced-motion:reduce){.anim{animation:none;opacity:1}.mode:hover{transform:none}}
+  a:focus-visible,.btn:focus-visible,summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
 
   @media print{
     .bar,.cta{display:none}
     body{background:#fff;font-size:11px}
-    section{padding:24px 0}
-    .hero{padding:10px 0 20px}
+    section{padding:22px 0}
+    .hero{padding:8px 0 18px}
+    .hero::before{display:none}
+    details.reading{display:none}
   }
 </style>
 </head>
@@ -146,26 +196,28 @@
 
 <div class="bar">
   <div class="bar-in">
-    <span class="nm">George Nakhleh</span>
-    <nav>
-      <a class="opt" href="#range">Range</a>
-      <a class="opt" href="#thinking">How I think</a>
-      <a class="opt" href="#experience">Experience</a>
-      <a class="opt" href="#skills">Skills</a>
-      <a href="https://www.linkedin.com/in/gnakhleh/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/NakhG" target="_blank" rel="noopener">GitHub</a>
-    </nav>
+    <div class="bar-glass">
+      <span class="nm">George Nakhleh</span>
+      <nav>
+        <a class="opt" href="#range">Range</a>
+        <a class="opt" href="#thinking">How I think</a>
+        <a class="opt" href="#experience">Experience</a>
+        <a class="opt" href="#skills">Skills</a>
+        <a href="https://www.linkedin.com/in/gnakhleh/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/NakhG" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
   </div>
 </div>
 
 <header class="hero">
   <div class="wrap anim d1">
-    <div class="kicker">Analytics &amp; BI Leader · Healthcare &amp; Technology</div>
-    <h1>Analytics as a service, as <em>products</em>, and as a <em>platform</em>.</h1>
-    <p class="lede">I'm George. For 10+ years I've delivered decision support directly to executives, shipped governed analytics products people actually use, and built the platform layer underneath: an AI harness, a semantic metric layer, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work can answer their own questions.</p>
+    <div class="eyebrow">Analytics &amp; BI Leader · Healthcare &amp; Technology</div>
+    <h1>Analytics as a <mark>service</mark>, as <mark>products</mark>, and as a <mark>platform</mark>.</h1>
+    <p class="lede">I'm George. For 10+ years I've delivered decision support directly to executives, shipped analytics products people actually use (reports, data marts, chatbots, reusable AI skills), and built the platform layer underneath: an AI harness, a semantic metric layer, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work gain real agency with information: they explore, build, and decide, without waiting on anyone.</p>
     <div class="hero-meta">
-      <span>Hockessin, DE · near Wilmington &amp; Philadelphia</span>
-      <span>Currently: Operations Analytics at Hinge Health</span>
+      <span>HOCKESSIN, DE · WILMINGTON / PHILADELPHIA</span>
+      <span>NOW: OPERATIONS ANALYTICS @ HINGE HEALTH</span>
     </div>
     <div class="cta">
       <a class="btn primary" href="https://www.linkedin.com/in/gnakhleh/" target="_blank" rel="noopener">
@@ -178,44 +230,49 @@
 </header>
 
 <div class="stats">
-  <div class="stats-in">
-    <div class="stat anim d1"><div class="v">16–22<span class="u">×</span></div><div class="l">lower cost per query on the company's first semantic metric layer</div></div>
-    <div class="stat anim d1"><div class="v">+13.4<span class="u">pp</span></div><div class="l">intervention lift, pre-registered study (n=12,197)</div></div>
-    <div class="stat anim d2"><div class="v">$1M<span class="u">+</span></div><div class="l">validated contract savings at MD Anderson</div></div>
-    <div class="stat anim d2">
-      <div class="v">117→290</div>
-      <svg class="spark" width="92" height="22" viewBox="0 0 92 22" role="img" aria-label="Sparkline showing workload rising from 117 to 290 units per worker per week">
-        <path d="M2 18 L18 17 L34 16.5 L50 14 L66 9 L88 3"/><circle cx="88" cy="3" r="2.6"/>
-      </svg>
-      <div class="l">workload surge made visible by a capacity-stress metric</div>
+  <div class="wrap">
+    <div class="stats-card anim d2">
+      <div class="stat"><div class="v">16–22×</div><div class="l">lower cost per query on the company's first semantic metric layer</div></div>
+      <div class="stat"><div class="v">+13.4pp</div><div class="l">intervention lift, pre-registered study (n=12,197)</div></div>
+      <div class="stat"><div class="v">$1M+</div><div class="l">validated contract savings at MD Anderson</div></div>
+      <div class="stat">
+        <div class="v">117→290</div>
+        <svg class="spark" width="92" height="22" viewBox="0 0 92 22" role="img" aria-label="Sparkline showing workload rising from 117 to 290 units per worker per week">
+          <path d="M2 18 L18 17 L34 16.5 L50 14 L66 9 L86 3"/><circle class="pop" cx="86" cy="3" r="3.4"/>
+        </svg>
+        <div class="l">workload surge made visible by a capacity-stress metric</div>
+      </div>
+      <div class="stat"><div class="v">12+</div><div class="l">legacy reports consolidated or retired via usage telemetry</div></div>
     </div>
-    <div class="stat anim d3"><div class="v">57<span class="u">%</span></div><div class="l">of commits to the team's AI harness, as founder and primary author</div></div>
   </div>
 </div>
 
 <section id="range">
   <div class="wrap">
-    <div class="sec-kicker anim d1">Range</div>
-    <h2 class="anim d1">Three ways I deliver analytics</h2>
-    <p class="sec-intro anim d1">Most analytics careers are one of these. The leverage comes from doing all three: the service work tells you what to productize, the products tell you what the platform must guarantee, and the platform makes everyone above it faster.</p>
+    <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Range</div>
+    <h2>Three ways I deliver analytics</h2>
+    <p class="sec-intro">Most analytics careers are one of these. The leverage comes from doing all three: the service work tells you what to productize, the products tell you what the platform must guarantee, and the platform makes everyone above it faster.</p>
     <div class="trip">
       <div class="mode anim d1">
-        <h3>As a service</h3>
-        <div class="what">Decision support, research, and trainings, delivered in the room.</div>
+        <span class="tag">01 · Service</span>
+        <h3>In the room</h3>
+        <div class="what">Decision support, research, and trainings, delivered directly to the people deciding.</div>
         <p class="case"><b>The staffing number.</b> I own the demand forecasting and capacity model that sets annual staffing and ongoing schedules for a flexible workforce at a company growing over 10% a year, and I partner with operations and finance on the decisions it drives.</p>
         <p class="case"><b>$1M+ defended.</b> At MD Anderson, I led the Cost of Care analytics and the contract savings validation behind $1M+ in documented improvements, presenting to supply chain and finance leadership.</p>
       </div>
       <div class="mode anim d2">
-        <h3>As products</h3>
-        <div class="what">Governed dashboards, monitors, and natural-language analytics people return to.</div>
-        <p class="case"><b>Performance, measured fairly.</b> A tiered performance product (leadership, manager, individual views) with case-mix adjustment so workload difficulty doesn't distort how people are measured. Landed across heavily invested stakeholders through change management, not fiat.</p>
-        <p class="case"><b>Analytics on analytics.</b> Usage telemetry on our own estate: which dashboards get used and which tables feed them, so we retire low-value assets and know our footprint.</p>
+        <span class="tag">02 · Products</span>
+        <h3>Things people return to</h3>
+        <div class="what">Reports, data marts, chatbots, and reusable AI skills.</div>
+        <p class="case"><b>Performance, measured fairly.</b> A tiered performance product (leadership, manager, individual views) with case-mix adjustment so workload difficulty doesn't distort how people are measured, replacing fragmented team-by-team reports with one methodology the people being measured can interrogate.</p>
+        <p class="case"><b>Analytics on analytics.</b> Usage telemetry on our own estate: which dashboards get used and which tables feed them. It drove consolidating or retiring over a dozen legacy reports, and it tells us what our work is worth.</p>
       </div>
       <div class="mode anim d3">
-        <h3>As a platform</h3>
-        <div class="what">The layer that makes everyone else's analytics trustworthy and fast.</div>
-        <p class="case"><b>The AI harness.</b> Founded the team's shared repo of reusable skills, context, and patterns (primary author, 57% of commits) with data guardrails and cost accountability. The onboarding guide sits alongside IT and Security docs.</p>
-        <p class="case"><b>The semantic layer.</b> Paired the harness with the company's first governed metric layer, so non-technical leaders query data in plain English at 16–22× lower cost per query, including people who had never touched a terminal.</p>
+        <span class="tag">03 · Platform</span>
+        <h3>Consumers become producers</h3>
+        <div class="what">Headless BI: the governed layer everything else reads from.</div>
+        <p class="case"><b>The AI harness.</b> Founded the team's shared repo of reusable skills, context, and patterns (primary author, 57% of commits) with data guardrails, evals, and cost accountability. The onboarding guide sits alongside IT and Security docs.</p>
+        <p class="case"><b>The semantic layer.</b> Define a metric once, render it anywhere: the company's first governed metric layer, so non-technical leaders query data in plain English at 16–22× lower cost per query. Usage logs and promotion paths let good local variants graduate into the shared standard.</p>
       </div>
     </div>
   </div>
@@ -223,7 +280,7 @@
 
 <section id="thinking">
   <div class="wrap">
-    <div class="sec-kicker">Point of view</div>
+    <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M12 3a6.5 6.5 0 0 0-4 11.6c.8.7 1.3 1.6 1.4 2.6h5.2c.1-1 .6-1.9 1.4-2.6A6.5 6.5 0 0 0 12 3z"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></span>Point of view</div>
     <h2>How I think about this work</h2>
     <div class="think">
       <div class="idea">
@@ -239,27 +296,118 @@
         <p>Centralize everything and people build shadow metrics; democratize everything and coherence dies. The third option: endorsed standards that are visible and voluntary. You can depart from them; the system just knows, shows it, and surfaces the patterns so good variants graduate into the standard.</p>
       </div>
     </div>
-    <p class="reading"><b>This comes from a longer reading project</b> in cybernetics, measurement theory, and organizational learning (Ashby, Beer, Austin, Muller, Goldratt, Pearl), and I'm happy to talk about any of it.</p>
+
+    <details class="reading">
+      <summary>
+        <span class="glyph"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        The reading list behind it
+        <span class="hint"><span class="open-t">Click to open</span><span class="close-t">Click to close</span></span>
+      </summary>
+      <div class="reading-body">
+        <p class="reading-note">A longer-running reading project in cybernetics, measurement theory, and organizational learning. Lead with <i>Moneyball</i>; defend with the canon. Two working questions per book, not summaries. Happy to talk about any of it.</p>
+        <div class="shelf">
+          <div class="shelf-g">
+            <h4>Information &amp; the economics of knowledge</h4>
+            <ul>
+              <li>Shannon, <i>A Mathematical Theory of Communication</i> (1948)</li>
+              <li>Wiener, <i>The Human Use of Human Beings</i> (1950)</li>
+              <li>Anderson, <i>The Long Tail</i> (2006)</li>
+              <li>Handy, <i>We the Purple People</i> (2021)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>The measurement tradition</h4>
+            <ul>
+              <li>Taylor, <i>Principles of Scientific Management</i> (1911)</li>
+              <li>Deming, <i>The New Economics</i> (1993)</li>
+              <li>Ohno, <i>Toyota Production System</i> (1978)</li>
+              <li>Grove, <i>High Output Management</i> (1983)</li>
+              <li>Kaplan &amp; Norton, <i>The Balanced Scorecard</i> (1992)</li>
+              <li>Austin, <i>Measuring and Managing Performance in Organizations</i> (1996)</li>
+              <li>Muller, <i>The Tyranny of Metrics</i> (2018)</li>
+              <li>Porter, <i>Trust in Numbers</i> (1995)</li>
+              <li>Ackoff, <i>Redesigning the Future</i> (1974)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Cybernetics &amp; systems</h4>
+            <ul>
+              <li>Wiener, <i>Cybernetics</i> (1948)</li>
+              <li>Ashby, <i>An Introduction to Cybernetics</i> (1956)</li>
+              <li>Bateson, <i>Steps to an Ecology of Mind</i> (1972)</li>
+              <li>Beer, <i>Brain of the Firm</i> (1972) · <i>Designing Freedom</i> (1974)</li>
+              <li>Meadows, <i>Thinking in Systems</i> (2008)</li>
+              <li>Sterman, <i>Business Dynamics</i> (2000)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Optimization &amp; decision</h4>
+            <ul>
+              <li>Bertsimas &amp; Tsitsiklis, <i>Introduction to Linear Optimization</i> (1997)</li>
+              <li>Boyd &amp; Vandenberghe, <i>Convex Optimization</i> (2004)</li>
+              <li>Ben-Tal, El Ghaoui &amp; Nemirovski, <i>Robust Optimization</i> (2009)</li>
+              <li>Goldratt, <i>The Goal</i> (1984)</li>
+              <li>Hubbard, <i>How to Measure Anything</i> (2007)</li>
+              <li>Pearl, <i>The Book of Why</i> (2018)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Institutions, sensemaking, failure</h4>
+            <ul>
+              <li>Argyris &amp; Schön, <i>Organizational Learning</i> (1978)</li>
+              <li>Douglas, <i>How Institutions Think</i> (1986)</li>
+              <li>Perrow, <i>Normal Accidents</i> (1984)</li>
+              <li>Weick, <i>Sensemaking in Organizations</i> (1995)</li>
+              <li>Davies, <i>The Unaccountability Machine</i> (2024)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Health systems &amp; care</h4>
+            <ul>
+              <li>IOM, <i>Best Care at Lower Cost</i> (2013)</li>
+              <li>Wachter, <i>The Digital Doctor</i> (2015)</li>
+              <li>Berwick, <i>Escape Fire</i> (2002)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Technology, scale, autonomy</h4>
+            <ul>
+              <li>Illich, <i>Tools for Conviviality</i> (1973)</li>
+              <li>Alexander, <i>A Pattern Language</i> (1977)</li>
+              <li>Sutton, <i>The Bitter Lesson</i> (2019)</li>
+              <li>Carse, <i>Finite and Infinite Games</i> (1986)</li>
+              <li>Weil, <i>The Need for Roots</i> (1943)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Cultural shorthand</h4>
+            <ul>
+              <li>Lewis, <i>Moneyball</i> (2003)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
 <section id="experience">
   <div class="wrap">
-    <div class="sec-kicker">Experience</div>
+    <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>Experience</div>
     <h2>Where the work happened</h2>
 
     <div class="job">
-      <div class="job-top"><span class="co">Hinge Health</span><span class="when">2022 – Present</span></div>
+      <div class="job-top"><span class="co">Hinge Health</span><span class="when">2022 – PRESENT</span></div>
       <div class="role-t">Senior Data Analyst, Operations Analytics (Analytics Engineering &amp; AI Platform)</div>
-      <div class="loc">Remote</div>
+      <div class="loc">REMOTE</div>
       <div class="pos">Platform building, decision support, and AI enablement across support, care, and clinical operations, working with operations leadership, finance, data engineering, quality, and clinical teams.</div>
       <ul>
-        <li>Built my analytics team's <b>AI harness</b>: a shared repo of reusable skills, context, and patterns (primary author, 57% of commits), with data guardrails and a cost-accountability framework. Paired it with the company's <b>first semantic metric layer</b>, so non-technical leaders query governed data in plain English with no ticket, at 16–22× lower cost per query. Wrote the onboarding guide now referenced alongside IT and Security docs, and coached staff with no Git or terminal background to self-serve safely.</li>
-        <li>Owned <b>demand forecasting and capacity planning</b> for 1+ years: the model that sets annual staffing and ongoing schedules for a flexible workforce at a company growing over 10% a year. Consolidated fragmented forecasts, encoded business heuristics where no history existed, and built the reporting front end. A capacity-stress metric made a workload surge visible (117 to 290 units per worker per week at flat headcount), and I reconciled a 34-point utilization gap traced to two teams measuring from different source systems.</li>
-        <li>Designed and owned a <b>tiered performance-analytics product</b> for 1+ years: leadership, manager, and individual views, coherent through dbt, with the methodology judgment to control for case mix so workload difficulty doesn't distort how people are measured. Landed it across heavily invested stakeholders through iterative change management, not by fiat.</li>
-        <li>Built the company's <b>first unified, production-grade operational analytics platform</b> in dbt and Databricks, consolidating multi-channel data for a 124-person org into a single version-controlled source of truth, plus <b>usage telemetry on the analytics estate itself</b> (dashboard consumption and the tables behind it) to retire low-value assets and quantify the team's footprint.</li>
-        <li>On my own initiative, mapped <b>20 compliance-sensitive metrics</b> across five regulated domains, identified the monitoring gaps, and proposed a composite "Regulated Risk Signal" executive metric for leadership review.</li>
-        <li>Built a full <b>experimentation stack</b> (two sequential A/B tests in Statsig, attribution, a conversion-likelihood scoring model) and ran a self-initiated, pre-registered study (n=12,197) connecting service quality to customer outcomes, showing a +13.4pp lift from a targeted behavioral intervention. Represented analytics on the Tableau to Mode BI migration.</li>
+        <li>Built my analytics team's <b>AI harness</b>: a shared repo of reusable skills, context, and patterns (primary author, 57% of commits), with data guardrails and a cost-accountability framework. Paired it with the company's <b>first semantic metric layer</b>, so non-technical leaders query governed data in plain English with no ticket, at 16–22× lower cost per query. Wrote the onboarding guide now cited alongside IT and Security docs, and coached no-Git staff to self-serve safely.</li>
+        <li><b>Modernized support analytics end to end</b>: consolidated disparate reporting into the company's first unified, production-grade platform in dbt and Databricks (email, chat, and phone for a 124-agent org), with the data engineering to make core operations modelable, unified measurement standards, the org's first individual performance reporting, and a support chatbot. Usage telemetry then consolidated or retired over a dozen legacy reports.</li>
+        <li>Owned <b>demand forecasting and capacity planning</b> for 1+ years: the model that sets annual staffing and ongoing schedules for a flexible workforce at a company growing over 10% a year. Consolidated fragmented forecasts, encoded business heuristics where no history existed, and built the reporting front end. A capacity-stress metric made a workload surge visible (117 to 290 units per worker per week at flat headcount), and I reconciled a 34-point utilization gap between two teams measuring from different systems.</li>
+        <li>Designed and owned a <b>tiered care-team performance product</b> for 1+ years: leadership, manager, and individual views, coherent through dbt, replacing fragmented team-by-team reporting with one holistic methodology the people being measured can interrogate. Made the call on case-mix adjustment so workload difficulty doesn't distort evaluations, and landed it across heavily invested stakeholders through iterative change management, not by fiat.</li>
+        <li>Run the team's <b>innovation-lab work</b>: mapped 20 compliance-sensitive metrics across five regulated domains and proposed a composite "Regulated Risk Signal" executive metric; ran a self-initiated, pre-registered causal study (n=12,197) connecting care-team quality and efficiency to member engagement and outcomes, showing a +13.4pp lift; and built novel information experiences, from a <b>"Wordle for data"</b> quarterly KPI celebration to animated operational flow visualizations.</li>
+        <li>Built a full <b>experimentation stack</b> for insurance verification: two sequential A/B tests in Statsig, attribution, an SMS launch, and a conversion-likelihood scoring model so outreach works from a prioritized list. Represented analytics on the Tableau to Mode BI migration.</li>
         <li>Introduced <b>Jira</b> to the team and later led the migration to <b>Linear</b>, architecting the program structure (98 issues across 7 cycles) and deploying multi-agent AI infrastructure where agents create, label, and route follow-on work under a self-governance framework.</li>
       </ul>
     </div>
@@ -267,7 +415,7 @@
     <div class="job">
       <div class="job-top"><span class="co">MD Anderson Cancer Center</span><span class="when">2021 – 2022</span></div>
       <div class="role-t">Supply Chain Decision Support Specialist (promoted)</div>
-      <div class="loc">Houston, TX</div>
+      <div class="loc">HOUSTON, TX</div>
       <div class="pos">Value analysis and contract decision support at a top US cancer center, working with clinical, supply chain, and finance leaders.</div>
       <ul>
         <li>Lead analyst on the <b>Cost of Care initiative</b>: found high-impact savings in medical-supply and drug utilization with Vizient benchmarking, led contract savings validation that secured <b>$1M+</b> in documented improvements, and set the department's supply-chain analytics strategy roadmap, presenting findings to supply-chain and finance leadership.</li>
@@ -277,7 +425,7 @@
     <div class="job">
       <div class="job-top"><span class="co">MD Anderson Cancer Center</span><span class="when">2020 – 2021</span></div>
       <div class="role-t">Supply Chain Decision Support Analyst</div>
-      <div class="loc">Houston, TX</div>
+      <div class="loc">HOUSTON, TX</div>
       <div class="pos">Crisis-response inventory analytics during COVID-19.</div>
       <ul>
         <li>Built the inventory forecasting and automated reporting that <b>kept MD Anderson supplied through COVID</b>, saving 40+ hrs/wk of manual effort and preventing critical stockouts during the surges, as part of the crisis-response task force.</li>
@@ -287,7 +435,7 @@
     <div class="job">
       <div class="job-top"><span class="co">Northwestern Medicine</span><span class="when">2017 – 2020</span></div>
       <div class="role-t">Analytics Consultant</div>
-      <div class="loc">Chicago, IL</div>
+      <div class="loc">CHICAGO, IL</div>
       <div class="pos">Patient experience and quality analytics with clinical and quality teams.</div>
       <ul>
         <li>Found patient-satisfaction drivers by integrating Press Ganey and Epic clinical data, and built a <b>CMS star-rating proxy model</b> (Vizient) that let quality teams act between official reporting cycles.</li>
@@ -300,7 +448,7 @@
 
 <section id="skills">
   <div class="wrap">
-    <div class="sec-kicker">Skills &amp; Education</div>
+    <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><polyline points="5 7 10 12 5 17"/><line x1="12" y1="17" x2="19" y2="17"/></svg></span>Skills &amp; Education</div>
     <h2>The toolkit</h2>
     <div class="cols">
       <div>
@@ -314,7 +462,7 @@
         </div>
         <div class="grp">
           <div class="grp-h">Tools</div>
-          <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">R</span><span class="chip">dbt</span><span class="chip">Databricks</span><span class="chip">Unity Catalog</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Mode</span><span class="chip">Statsig</span><span class="chip">AWS</span><span class="chip">Azure</span></div>
+          <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">R</span><span class="chip">dbt</span><span class="chip">Databricks</span><span class="chip">Unity Catalog</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Mode</span><span class="chip">Statsig</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Quarto</span></div>
         </div>
         <div class="grp">
           <div class="grp-h">AI &amp; Automation</div>
@@ -323,15 +471,15 @@
       </div>
       <div>
         <div class="edu-d">MS, Predictive Analytics</div>
-        <div class="edu-s">DePaul University · Data Mining in CRM</div>
+        <div class="edu-s">DEPAUL UNIVERSITY · DATA MINING IN CRM</div>
         <div class="edu-d">BA, Political Science</div>
-        <div class="edu-s">University of Michigan</div>
+        <div class="edu-s">UNIVERSITY OF MICHIGAN</div>
         <div class="grp-h" style="margin-top:26px">Certifications</div>
-        <div class="cert">Google Project Management Professional</div>
-        <div class="cert">Vizient Analyst</div>
-        <div class="cert">dbt Developer<span class="tag">IN PROGRESS</span></div>
-        <div class="cert">Databricks Analytics Engineer Pathway<span class="tag">IN PROGRESS</span></div>
-        <div class="cert">Claude Certified Architect, Foundations<span class="tag">IN PROGRESS</span></div>
+        <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>Google Project Management Professional</div>
+        <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>Vizient Analyst</div>
+        <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>dbt Developer<span class="tag">IN PROGRESS</span></div>
+        <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>Databricks Analytics Engineer Pathway<span class="tag">IN PROGRESS</span></div>
+        <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>Claude Certified Architect, Foundations<span class="tag">IN PROGRESS</span></div>
       </div>
     </div>
   </div>
