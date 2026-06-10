@@ -146,7 +146,12 @@
   /* ---- experience ---- */
   .job{padding:32px 0;border-top:1px solid var(--line)}
   .job:first-of-type{border-top:none;padding-top:8px}
-  .job-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 18px}
+  .job-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px 18px}
+  .co-wrap{display:flex;align-items:center;gap:12px}
+  .logo{position:relative;width:34px;height:34px;flex:none;border-radius:9px;border:1px solid var(--line);background:#fff;overflow:hidden;display:grid;place-items:center}
+  .logo .fb{font-family:"JetBrains Mono";font-size:12px;font-weight:600;color:var(--ink2);letter-spacing:.02em}
+  .logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:5px;background:#fff;filter:grayscale(.25)}
+  .job:hover .logo img{filter:none}
   .job .co{font-family:"Schibsted Grotesk";font-weight:700;font-size:20px;letter-spacing:-.015em}
   .job .when{font-family:"JetBrains Mono";font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap}
   .job .role-t{margin-top:2px;font-size:14.5px;font-weight:600;color:var(--ink2)}
@@ -157,6 +162,10 @@
   .job li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:3px;background:var(--hl);border:1px solid var(--ink);border-radius:2px}
   .job li b{color:var(--ink);font-weight:600}
   .earlier{padding:20px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .mini{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid var(--line);background:#fff;vertical-align:-4px;margin:0 5px 0 2px;object-fit:contain;padding:1.5px;filter:grayscale(.25)}
+  .edu-row{display:flex;align-items:center;gap:10px}
+  .edu-logo{width:30px;height:30px;flex:none;border-radius:8px;border:1px solid var(--line);background:#fff;object-fit:contain;padding:3px;filter:grayscale(.25)}
+  .chip img{width:14px;height:14px;vertical-align:-2.5px;margin-right:5px;object-fit:contain}
 
   /* ---- skills / edu ---- */
   .cols{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -214,7 +223,7 @@
   <div class="wrap anim d1">
     <div class="eyebrow">Analytics &amp; BI Leader · Healthcare &amp; Technology</div>
     <h1>Analytics as a <mark>service</mark>, as <mark>products</mark>, and as a <mark>platform</mark>.</h1>
-    <p class="lede">I'm George. For 10+ years I've delivered decision support directly to executives, shipped analytics products people actually use (reports, data marts, chatbots, reusable AI skills), and built the platform layer underneath: an AI harness, a semantic metric layer, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work gain real agency with information: they explore, build, and decide, without waiting on anyone.</p>
+    <p class="lede">I'm George. For 12+ years I've delivered decision support directly to executives, shipped analytics products people actually use (reports, data marts, chatbots, reusable AI skills), and built the platform layer underneath: an AI harness, a semantic metric layer, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work gain real agency with information: they explore, build, and decide, without waiting on anyone.</p>
     <div class="hero-meta">
       <span>HOCKESSIN, DE · WILMINGTON / PHILADELPHIA</span>
       <span>NOW: OPERATIONS ANALYTICS @ HINGE HEALTH</span>
@@ -398,7 +407,7 @@
     <h2>Where the work happened</h2>
 
     <div class="job">
-      <div class="job-top"><span class="co">Hinge Health</span><span class="when">2022 – PRESENT</span></div>
+      <div class="job-top"><span class="co-wrap"><span class="logo"><span class="fb">HH</span><img src="assets/logos/hinge-health.png" alt="" onerror="this.remove()"></span><span class="co">Hinge Health</span></span><span class="when">2022 – PRESENT</span></div>
       <div class="role-t">Senior Data Analyst, Operations Analytics (Analytics Engineering &amp; AI Platform)</div>
       <div class="loc">REMOTE</div>
       <div class="pos">Platform building, decision support, and AI enablement across support, care, and clinical operations, working with operations leadership, finance, data engineering, quality, and clinical teams.</div>
@@ -414,7 +423,7 @@
     </div>
 
     <div class="job">
-      <div class="job-top"><span class="co">MD Anderson Cancer Center</span><span class="when">2021 – 2022</span></div>
+      <div class="job-top"><span class="co-wrap"><span class="logo"><span class="fb">MD</span><img src="assets/logos/md-anderson.png" alt="" onerror="this.remove()"></span><span class="co-wrap"><span class="logo"><span class="fb">MD</span><img src="assets/logos/md-anderson.png" alt="" onerror="this.remove()"></span><span class="co">MD Anderson Cancer Center</span></span></span><span class="when">2021 – 2022</span></div>
       <div class="role-t">Supply Chain Decision Support Specialist (promoted)</div>
       <div class="loc">HOUSTON, TX</div>
       <div class="pos">Value analysis and contract decision support at a top US cancer center, working with clinical, supply chain, and finance leaders.</div>
@@ -434,7 +443,7 @@
     </div>
 
     <div class="job">
-      <div class="job-top"><span class="co">Northwestern Medicine</span><span class="when">2017 – 2020</span></div>
+      <div class="job-top"><span class="co-wrap"><span class="logo"><span class="fb">NM</span><img src="assets/logos/northwestern-medicine.png" alt="" onerror="this.remove()"></span><span class="co">Northwestern Medicine</span></span><span class="when">2017 – 2020</span></div>
       <div class="role-t">Analytics Consultant</div>
       <div class="loc">CHICAGO, IL</div>
       <div class="pos">Patient experience and quality analytics with clinical and quality teams.</div>
@@ -443,7 +452,7 @@
       </ul>
     </div>
 
-    <p class="earlier"><b>Earlier:</b> Research Assistant, Loyola University Medical Center (2016–2017) · UX Research Consultant, KnowClick (2014–2016)</p>
+    <p class="earlier"><b>Earlier:</b> <img class="mini" src="assets/logos/loyola.png" alt="">Research Assistant, Loyola University Medical Center (2016–2017) · <img class="mini" src="assets/logos/knowclick.png" alt="">UX Research Consultant, KnowClick (2014–2016) · Market Research Analyst, ListenLogic (2013–2014)</p>
   </div>
 </section>
 
@@ -463,18 +472,18 @@
         </div>
         <div class="grp">
           <div class="grp-h">Tools</div>
-          <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">R</span><span class="chip">dbt</span><span class="chip">Databricks</span><span class="chip">Unity Catalog</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Mode</span><span class="chip">Statsig</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Looker</span><span class="chip">BigQuery</span><span class="chip">Quarto</span></div>
+          <div class="chips"><span class="chip">SQL</span><span class="chip"><img src="assets/logos/python.png" alt="">Python</span><span class="chip"><img src="assets/logos/r.svg" alt="">R</span><span class="chip">dbt</span><span class="chip"><img src="assets/logos/databricks.png" alt="">Databricks</span><span class="chip">Unity Catalog</span><span class="chip"><img src="assets/logos/tableau.png" alt="">Tableau</span><span class="chip"><img src="assets/logos/powerbi.png" alt="">Power BI</span><span class="chip">Mode</span><span class="chip">Statsig</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Looker</span><span class="chip">BigQuery</span><span class="chip">Quarto</span></div>
         </div>
         <div class="grp">
           <div class="grp-h">AI &amp; Automation</div>
-          <div class="chips"><span class="chip">Claude Code</span><span class="chip">AI Harness Engineering</span><span class="chip">Multi-Agent Orchestration</span><span class="chip">MCP</span><span class="chip">Databricks Genie</span><span class="chip">Glean</span><span class="chip">Power Automate</span></div>
+          <div class="chips"><span class="chip"><img src="assets/logos/claude.png" alt="">Claude Code</span><span class="chip">AI Harness Engineering</span><span class="chip">Multi-Agent Orchestration</span><span class="chip">MCP</span><span class="chip">Databricks Genie</span><span class="chip">Glean</span><span class="chip">Power Automate</span></div>
         </div>
       </div>
       <div>
-        <div class="edu-d">MS, Predictive Analytics</div>
-        <div class="edu-s">DEPAUL UNIVERSITY · DATA MINING IN CRM</div>
-        <div class="edu-d">BA, Political Science</div>
-        <div class="edu-s">UNIVERSITY OF MICHIGAN</div>
+        <div class="edu-row"><img class="edu-logo" src="assets/logos/depaul.png" alt=""><div><div class="edu-d">MS, Predictive Analytics</div>
+        <div class="edu-s">DEPAUL UNIVERSITY · DATA MINING IN CRM</div></div></div>
+        <div class="edu-row" style="margin-top:10px"><img class="edu-logo" src="assets/logos/michigan.png" alt=""><div><div class="edu-d">BA, Political Science</div>
+        <div class="edu-s">UNIVERSITY OF MICHIGAN</div></div></div>
         <div class="grp-h" style="margin-top:26px">Certifications</div>
         <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>Google Project Management Professional</div>
         <div class="cert"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>Vizient Analyst</div>
