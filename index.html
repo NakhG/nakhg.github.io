@@ -142,6 +142,8 @@
   .shelf-g ul{list-style:none}
   .shelf-g li{font-size:13px;color:var(--ink2);padding:2.5px 0;line-height:1.5}
   .shelf-g li i{font-style:italic;color:var(--ink)}
+  .shelf-g li{padding:5px 0}
+  .shelf-g li .q{display:block;margin-top:2px;font-size:12.5px;color:var(--muted);line-height:1.5}
 
   /* ---- experience ---- */
   .job{padding:32px 0;border-top:1px solid var(--line)}
@@ -209,8 +211,8 @@
       <span class="nm">George Nakhleh</span>
       <nav>
         <a class="opt" href="#range">Range</a>
-        <a class="opt" href="#thinking">How I think</a>
         <a class="opt" href="#experience">Experience</a>
+        <a class="opt" href="#thinking">How I think</a>
         <a class="opt" href="#skills">Skills</a>
         <a href="https://www.linkedin.com/in/gnakhleh/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/NakhG" target="_blank" rel="noopener">GitHub</a>
@@ -223,7 +225,7 @@
   <div class="wrap anim d1">
     <div class="eyebrow">Analytics &amp; BI Leader · Healthcare &amp; Technology</div>
     <h1>Analytics as a <mark>service</mark>, as <mark>products</mark>, and as a <mark>platform</mark>.</h1>
-    <p class="lede">I'm George. For 12+ years I've delivered decision support directly to executives, shipped analytics products people actually use (reports, data marts, chatbots, a reusable AI harness), and built the platform that keeps them coherent: a governed semantic layer, promotion paths, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work gain real agency with information: they explore, build, and decide, without waiting on anyone.</p>
+    <p class="lede">I'm George. For 12+ years I've delivered decision support directly to executives, shipped analytics products (reports, data marts, chatbots, a reusable AI harness), and built the platform that keeps them coherent: a governed semantic layer, promotion paths, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work can explore, build, and decide with information themselves.</p>
     <div class="hero-meta">
       <span>HOCKESSIN, DE · WILMINGTON / PHILADELPHIA</span>
       <span>NOW: OPERATIONS ANALYTICS @ HINGE HEALTH</span>
@@ -242,7 +244,7 @@
   <div class="wrap">
     <div class="stats-card anim d2">
       <div class="stat"><div class="v">16–22×</div><div class="l">lower cost per query on the company's first semantic metric layer</div></div>
-      <div class="stat"><div class="v">+13.4pp</div><div class="l">intervention lift, pre-registered study (n=12,197)</div></div>
+      <div class="stat"><div class="v">+13.4pp</div><div class="l">lift from a targeted intervention, pre-registered observational study (n=12,197)</div></div>
       <div class="stat"><div class="v">$1M+</div><div class="l">validated contract savings at MD Anderson</div></div>
       <div class="stat">
         <div class="v">117→290</div>
@@ -260,7 +262,7 @@
   <div class="wrap">
     <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Range</div>
     <h2>Three ways I deliver analytics</h2>
-    <p class="sec-intro">Most analysts live in one of these. Service is the judgment I bring to a single decision. A product turns that judgment into something durable the org keeps using. A platform lets the whole org build and trust its own analytics on top. Each tier lifts the next: service shows what's worth building, products show what the platform has to guarantee, and the platform multiplies what everyone above it can do.</p>
+    <p class="sec-intro">Service is the judgment I bring to a single decision. A product turns that judgment into something durable the org keeps using. A platform lets the whole org build and trust its own analytics on top.</p>
     <div class="trip">
       <div class="mode anim d1">
         <span class="tag">01 · Service</span>
@@ -277,123 +279,10 @@
       <div class="mode anim d3">
         <span class="tag">03 · Platform</span>
         <h3>Self-serve, still canonical</h3>
-        <div class="what">The layer that lets the whole org build and trust its own analytics: governed definitions, lineage, promotion paths, evals. Most teams stop at products, and a stack of products is not a platform.</div>
+        <div class="what">The layer that lets the whole org build and trust its own analytics: governed definitions, lineage, promotion paths, evals.</div>
         <p class="case">The company's first governed semantic layer, so non-technical leaders query in plain English against one set of definitions, with promotion paths that graduate a strong local metric into the org standard and telemetry that retires the dashboards no one opens.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="thinking">
-  <div class="wrap">
-    <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M12 3a6.5 6.5 0 0 0-4 11.6c.8.7 1.3 1.6 1.4 2.6h5.2c.1-1 .6-1.9 1.4-2.6A6.5 6.5 0 0 0 12 3z"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></span>Point of view</div>
-    <h2>How I think about this work</h2>
-    <div class="think">
-      <div class="idea">
-        <h3>Bedrock and voice</h3>
-        <p>AI has collapsed the cost of producing a chart to nearly zero, which is great for speed and terrible for trust. The answer is governed bedrock underneath: deterministic, version-controlled metric definitions every tool and every AI reads from, and a consumption surface that earns attention through rigor and disclosure.</p>
-      </div>
-      <div class="idea">
-        <h3>Democratization isn't automation</h3>
-        <p>The lazy AI playbook automates the analyst and hands the domain expert a chatbot. The real win is agency: the people closest to the work can inspect, question, and create with the information that describes it. Engineers maintain the scaffolding; domain experts drive the content.</p>
-      </div>
-      <div class="idea">
-        <h3>Standards as guardrails, not walls</h3>
-        <p>Centralize everything and people build shadow metrics; democratize everything and coherence dies. The third option: endorsed standards that are visible and voluntary. You can depart from them; the system just knows, shows it, and surfaces the patterns so good variants graduate into the standard.</p>
-      </div>
-    </div>
-
-    <details class="reading">
-      <summary>
-        <span class="glyph"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        The reading list behind it
-        <span class="hint"><span class="open-t">Click to open</span><span class="close-t">Click to close</span></span>
-      </summary>
-      <div class="reading-body">
-        <p class="reading-note">A longer-running reading project in cybernetics, measurement theory, and organizational learning. Lead with <i>Moneyball</i>; defend with the canon. Two working questions per book, not summaries. Happy to talk about any of it.</p>
-        <div class="shelf">
-          <div class="shelf-g">
-            <h4>Information &amp; the economics of knowledge</h4>
-            <ul>
-              <li>Shannon, <i>A Mathematical Theory of Communication</i> (1948)</li>
-              <li>Wiener, <i>The Human Use of Human Beings</i> (1950)</li>
-              <li>Anderson, <i>The Long Tail</i> (2006)</li>
-              <li>Handy, <i>We the Purple People</i> (2021)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>The measurement tradition</h4>
-            <ul>
-              <li>Taylor, <i>Principles of Scientific Management</i> (1911)</li>
-              <li>Deming, <i>The New Economics</i> (1993)</li>
-              <li>Ohno, <i>Toyota Production System</i> (1978)</li>
-              <li>Grove, <i>High Output Management</i> (1983)</li>
-              <li>Kaplan &amp; Norton, <i>The Balanced Scorecard</i> (1992)</li>
-              <li>Austin, <i>Measuring and Managing Performance in Organizations</i> (1996)</li>
-              <li>Muller, <i>The Tyranny of Metrics</i> (2018)</li>
-              <li>Porter, <i>Trust in Numbers</i> (1995)</li>
-              <li>Ackoff, <i>Redesigning the Future</i> (1974)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>Cybernetics &amp; systems</h4>
-            <ul>
-              <li>Wiener, <i>Cybernetics</i> (1948)</li>
-              <li>Ashby, <i>An Introduction to Cybernetics</i> (1956)</li>
-              <li>Bateson, <i>Steps to an Ecology of Mind</i> (1972)</li>
-              <li>Beer, <i>Brain of the Firm</i> (1972) · <i>Designing Freedom</i> (1974)</li>
-              <li>Meadows, <i>Thinking in Systems</i> (2008)</li>
-              <li>Sterman, <i>Business Dynamics</i> (2000)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>Optimization &amp; decision</h4>
-            <ul>
-              <li>Bertsimas &amp; Tsitsiklis, <i>Introduction to Linear Optimization</i> (1997)</li>
-              <li>Boyd &amp; Vandenberghe, <i>Convex Optimization</i> (2004)</li>
-              <li>Ben-Tal, El Ghaoui &amp; Nemirovski, <i>Robust Optimization</i> (2009)</li>
-              <li>Goldratt, <i>The Goal</i> (1984)</li>
-              <li>Hubbard, <i>How to Measure Anything</i> (2007)</li>
-              <li>Pearl, <i>The Book of Why</i> (2018)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>Institutions, sensemaking, failure</h4>
-            <ul>
-              <li>Argyris &amp; Schön, <i>Organizational Learning</i> (1978)</li>
-              <li>Douglas, <i>How Institutions Think</i> (1986)</li>
-              <li>Perrow, <i>Normal Accidents</i> (1984)</li>
-              <li>Weick, <i>Sensemaking in Organizations</i> (1995)</li>
-              <li>Davies, <i>The Unaccountability Machine</i> (2024)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>Health systems &amp; care</h4>
-            <ul>
-              <li>IOM, <i>Best Care at Lower Cost</i> (2013)</li>
-              <li>Wachter, <i>The Digital Doctor</i> (2015)</li>
-              <li>Berwick, <i>Escape Fire</i> (2002)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>Technology, scale, autonomy</h4>
-            <ul>
-              <li>Illich, <i>Tools for Conviviality</i> (1973)</li>
-              <li>Alexander, <i>A Pattern Language</i> (1977)</li>
-              <li>Sutton, <i>The Bitter Lesson</i> (2019)</li>
-              <li>Carse, <i>Finite and Infinite Games</i> (1986)</li>
-              <li>Weil, <i>The Need for Roots</i> (1943)</li>
-            </ul>
-          </div>
-          <div class="shelf-g">
-            <h4>Cultural shorthand</h4>
-            <ul>
-              <li>Lewis, <i>Moneyball</i> (2003)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </details>
   </div>
 </section>
 
@@ -411,27 +300,22 @@
         <li>Built my analytics team's <b>AI harness</b>: a shared repo of reusable skills, context, and patterns (primary author, 57% of commits), with data guardrails and a cost-accountability framework. Paired it with the company's <b>first semantic metric layer</b>, so non-technical leaders query governed data in plain English with no ticket, at 16–22× lower cost per query. Wrote the onboarding guide now cited alongside IT and Security docs, and coached no-Git staff to self-serve safely.</li>
         <li><b>Modernized support analytics end to end</b>: consolidated disparate reporting into the company's first unified, production-grade platform in dbt and Databricks (email, chat, and phone for a 124-agent org), with the data engineering to make core operations modelable, unified measurement standards, the org's first individual performance reporting, and a support chatbot. Usage telemetry then consolidated or retired over a dozen legacy reports.</li>
         <li>Owned <b>demand forecasting and capacity planning</b> for 1+ years: the model that sets annual staffing and ongoing schedules for a flexible workforce at a company growing over 10% a year. Consolidated fragmented forecasts, encoded business heuristics where no history existed, and built the reporting front end. A capacity-stress metric made a workload surge visible (117 to 290 units per worker per week at flat headcount), and I reconciled a 34-point utilization gap between two teams measuring from different systems.</li>
-        <li>Designed and owned a <b>tiered care-team performance product</b> for 1+ years: leadership, manager, and individual views, coherent through dbt, replacing fragmented team-by-team reporting with one holistic methodology the people being measured can interrogate. Made the call on case-mix adjustment so workload difficulty doesn't distort evaluations, and landed it across heavily invested stakeholders through iterative change management, not by fiat.</li>
-        <li>Run the team's <b>innovation-lab work</b>: mapped 20 compliance-sensitive metrics across five regulated domains and proposed a composite "Regulated Risk Signal" executive metric; ran a self-initiated, pre-registered causal study (n=12,197) connecting care-team quality and efficiency to member engagement and outcomes, showing a +13.4pp lift; and built novel information experiences, from a <b>"Wordle for data"</b> quarterly KPI celebration to animated operational flow visualizations.</li>
+        <li>Designed and owned a <b>tiered care-team performance product</b> for 1+ years: leadership, manager, and individual views, coherent through dbt, replacing fragmented team-by-team reporting with one holistic methodology the people being measured can interrogate. Made the call on case-mix adjustment so workload difficulty doesn't distort evaluations, and landed it across heavily invested stakeholders through iterative change management.</li>
+        <li>Run the team's <b>innovation-lab work</b>: mapped 20 compliance-sensitive metrics across five regulated domains and proposed a composite "Regulated Risk Signal" executive metric; ran a self-initiated, pre-registered observational study (n=12,197; permutation testing, adversarial validation) connecting care-team quality and efficiency to member engagement and outcomes, which estimated a +13.4pp lift from a targeted intervention; and built new ways to present information, from a <b>"Wordle for data"</b> quarterly KPI celebration to animated operational flow visualizations.</li>
         <li>Built a full <b>experimentation stack</b> for insurance verification: two sequential A/B tests in Statsig, attribution, an SMS launch, and a conversion-likelihood scoring model so outreach works from a prioritized list. Represented analytics on the Tableau to Mode BI migration.</li>
         <li>Introduced <b>Jira</b> to the team and later led the migration to <b>Linear</b>, architecting the program structure (98 issues across 7 cycles) and deploying multi-agent AI infrastructure where agents create, label, and route follow-on work under a self-governance framework.</li>
       </ul>
     </div>
 
     <div class="job">
-      <div class="job-top"><span class="co-wrap"><span class="logo"><span class="fb">MD</span><img src="assets/logos/md-anderson.png" alt="" onerror="this.remove()"></span><span class="co">MD Anderson Cancer Center</span></span><span class="when">2021 – 2022</span></div>
-      <div class="role-t">Supply Chain Decision Support Specialist (promoted)</div>
+      <div class="job-top"><span class="co-wrap"><span class="logo"><span class="fb">MD</span><img src="assets/logos/md-anderson.png" alt="" onerror="this.remove()"></span><span class="co">MD Anderson Cancer Center</span></span><span class="when">2020 – 2022</span></div>
+      <div class="role-t">Supply Chain Decision Support Specialist (promoted), 2021 – 2022</div>
       <div class="loc">HOUSTON, TX</div>
       <div class="pos">Value analysis and contract decision support at a top US cancer center, working with clinical, supply chain, and finance leaders.</div>
       <ul>
         <li>Lead analyst on the <b>Cost of Care initiative</b>: found high-impact savings in medical-supply and drug utilization with Vizient benchmarking, led contract savings validation that secured <b>$1M+</b> in documented improvements, and set the department's supply-chain analytics strategy roadmap, presenting findings to supply-chain and finance leadership.</li>
       </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-top"><span class="co">MD Anderson Cancer Center</span><span class="when">2020 – 2021</span></div>
-      <div class="role-t">Supply Chain Decision Support Analyst</div>
-      <div class="loc">HOUSTON, TX</div>
+      <div class="role-t" style="margin-top:18px">Supply Chain Decision Support Analyst, 2020 – 2021</div>
       <div class="pos">Crisis-response inventory analytics during COVID-19.</div>
       <ul>
         <li>Built the inventory forecasting and automated reporting that <b>kept MD Anderson supplied through COVID</b>, saving 40+ hrs/wk of manual effort and preventing critical stockouts during the surges, as part of the crisis-response task force.</li>
@@ -452,6 +336,115 @@
   </div>
 </section>
 
+<section id="thinking">
+  <div class="wrap">
+    <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><path d="M12 3a6.5 6.5 0 0 0-4 11.6c.8.7 1.3 1.6 1.4 2.6h5.2c.1-1 .6-1.9 1.4-2.6A6.5 6.5 0 0 0 12 3z"/><line x1="9.5" y1="20" x2="14.5" y2="20"/></svg></span>Point of view</div>
+    <h2>How I think about this work</h2>
+    <div class="think">
+      <div class="idea">
+        <h3>Bedrock and voice</h3>
+        <p>Internal analytics used to look like broadcast TV: a few sanctioned channels and slow agreement on what was true. Now anyone with an LLM can build a dashboard in minutes, and the internal information environment is drifting toward the shape of the consumer internet. Two failure modes I watch for are polished dashboards on sloppy definitions, and rigorously governed metrics nobody reads because the presentation is bureaucratic. Bloomberg is probably the best template going forward: governed data and an editorial voice in the same institution.</p>
+      </div>
+      <div class="idea">
+        <h3>Let variety arise, then promote it</h3>
+        <p>A standard has to absorb the variety it governs (Ashby's requisite variety). Mandate one canonical metric and teams either game it or keep shadow versions the center never sees. I'd rather let anyone fork a metric or report, and let what earns adoption graduate from personal to community to institutional to production. The catch is that forking without a promotion path produces silos, and the cost lands on the data engineers who inherit the work and the people being measured.</p>
+      </div>
+      <div class="idea">
+        <h3>Governance scaled to consequence</h3>
+        <p>An exploratory dashboard needs an owner and a readable methodology. A shared metric that AI agents query needs queryable lineage, a visible confidence tier, and version history. Anything used to rate workers or set comp needs an owner of record, promotion gates, and a way for the people being measured to contest the definition. Regulated and PHI-bearing paths get formal review with Legal, Privacy, and Security.</p>
+      </div>
+    </div>
+
+    <details class="reading">
+      <summary>
+        <span class="glyph"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        The reading list behind it
+        <span class="hint"><span class="open-t">Click to open</span><span class="close-t">Click to close</span></span>
+      </summary>
+      <div class="reading-body">
+        <p class="reading-note">A longer-running reading project in cybernetics, measurement theory, and organizational learning. For each book I keep two working questions instead of a summary; one of them is listed here. Happy to talk about any of it.</p>
+        <div class="shelf">
+          <div class="shelf-g">
+            <h4>Information &amp; the economics of knowledge</h4>
+            <ul>
+              <li>Shannon, <i>A Mathematical Theory of Communication</i> (1948)<span class="q">Where does signal end and noise begin in an organization's data flows?</span></li>
+              <li>Wiener, <i>The Human Use of Human Beings</i> (1950)<span class="q">When automation handles the feedback loop, what changes for the humans inside it?</span></li>
+              <li>Anderson, <i>The Long Tail</i> (2006)<span class="q">When the marginal cost of producing something collapses, what happens to the economics of curation?</span></li>
+              <li>The Bloomberg Terminal<span class="q">How do you maintain rigor and reach at the same time?</span></li>
+              <li>Handy, <i>We the Purple People</i> (2021)<span class="q">Who carries editorial responsibility for the analytical layer of an organization?</span></li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>The measurement tradition</h4>
+            <ul>
+              <li>Taylor, <i>Principles of Scientific Management</i> (1911)<span class="q">When measurement treats workers as interchangeable inputs, what does the organization lose?</span></li>
+              <li>Deming, <i>The New Economics</i> (1993)<span class="q">What is the difference between measuring a process and measuring the people inside it?</span></li>
+              <li>Ohno, <i>Toyota Production System</i> (1978)<span class="q">Who holds the most accurate picture of how a process actually works?</span></li>
+              <li>Grove, <i>High Output Management</i> (1983)<span class="q">Why does every speed metric need a counterbalancing quality gate?</span></li>
+              <li>Kaplan &amp; Norton, <i>The Balanced Scorecard</i> (1992)<span class="q">What leading indicators would a lagging metric never surface?</span></li>
+              <li>Austin, <i>Measuring and Managing Performance in Organizations</i> (1996)<span class="q">Can a measure be both motivational and informational at the same time?</span></li>
+              <li>Muller, <i>The Tyranny of Metrics</i> (2018)<span class="q">What is the relationship between metric visibility and gaming?</span></li>
+              <li>Porter, <i>Trust in Numbers</i> (1995)<span class="q">Why do numbers feel objective even when the choices behind them are not?</span></li>
+              <li>Ackoff, <i>Redesigning the Future</i> (1974)<span class="q">What would a systems view change about how we approach workforce planning?</span></li>
+              <li>Lewis, <i>Moneyball</i> (2003)</li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Cybernetics &amp; systems</h4>
+            <ul>
+              <li>Wiener, <i>Cybernetics</i> (1948)<span class="q">What does communication theory suggest about the limits of centralized decision-making?</span></li>
+              <li>Ashby, <i>An Introduction to Cybernetics</i> (1956)<span class="q">What does requisite variety imply about how metric definitions should be structured?</span></li>
+              <li>Bateson, <i>Steps to an Ecology of Mind</i> (1972)<span class="q">What's the risk of assuming a correlation gives you the ability to steer a metric?</span></li>
+              <li>Beer, <i>Brain of the Firm</i> (1972) · <i>Designing Freedom</i> (1974)<span class="q">What distinguishes coordination from control?</span></li>
+              <li>Meadows, <i>Thinking in Systems</i> (2008)<span class="q">Where do delays and feedback loops produce counterintuitive outcomes?</span></li>
+              <li>Sterman, <i>Business Dynamics</i> (2000)<span class="q">What does dynamic complexity imply about the usefulness of optimization?</span></li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Optimization &amp; decision</h4>
+            <ul>
+              <li>Bertsimas &amp; Tsitsiklis, <i>Introduction to Linear Optimization</i> (1997)<span class="q">What does a shadow price reveal about the cost of our own self-imposed constraints?</span></li>
+              <li>Boyd &amp; Vandenberghe, <i>Convex Optimization</i> (2004)<span class="q">Why is convexity, rather than linearity, the line between problems we can solve and problems we can't?</span></li>
+              <li>Ben-Tal, El Ghaoui &amp; Nemirovski, <i>Robust Optimization</i> (2009)<span class="q">What's the danger of optimizing for a perfect, fragile future instead of building for resilience?</span></li>
+              <li>Goldratt, <i>The Goal</i> (1984)<span class="q">Why does optimizing non-bottleneck components degrade the whole system?</span></li>
+              <li>Hubbard, <i>How to Measure Anything</i> (2007)<span class="q">At what point does gathering more data cost more than the decision risk it reduces?</span></li>
+              <li>Pearl, <i>The Book of Why</i> (2018)<span class="q">What does the ladder of causation imply about what an analytical claim can actually say?</span></li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Institutions, sensemaking, failure</h4>
+            <ul>
+              <li>Argyris &amp; Schön, <i>Organizational Learning</i> (1978)<span class="q">How do frontline workers become co-authors of the operational models instead of their subjects?</span></li>
+              <li>Douglas, <i>How Institutions Think</i> (1986)<span class="q">Why do governance conversations so often talk past each other?</span></li>
+              <li>Perrow, <i>Normal Accidents</i> (1984)<span class="q">When accidents emerge from component interactions rather than single failures, what does good governance target?</span></li>
+              <li>Weick, <i>Sensemaking in Organizations</i> (1995)<span class="q">How does a metric definition actually become agreed upon?</span></li>
+              <li>Davies, <i>The Unaccountability Machine</i> (2024)<span class="q">How do metrics-driven management frameworks create accountability sinks?</span></li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Health systems &amp; care</h4>
+            <ul>
+              <li>IOM, <i>Best Care at Lower Cost</i> (2013)<span class="q">How does a learning health system scale without overriding the judgment complex patients need?</span></li>
+              <li>Wachter, <i>The Digital Doctor</i> (2015)<span class="q">What happens when an organization puts the dashboard ahead of the physical reality of the workplace?</span></li>
+              <li>Berwick, <i>Escape Fire</i> (2002)<span class="q">Why do industrial optimization models fracture in the relationship-driven world of medicine?</span></li>
+            </ul>
+          </div>
+          <div class="shelf-g">
+            <h4>Technology, scale, autonomy</h4>
+            <ul>
+              <li>Illich, <i>Tools for Conviviality</i> (1973)<span class="q">What makes a tool convivial rather than controlling?</span></li>
+              <li>Alexander, <i>A Pattern Language</i> (1977)<span class="q">How does local autonomy compose into coherent larger structures without central direction?</span></li>
+              <li>Sutton, <i>The Bitter Lesson</i> (2019)<span class="q">When does handcrafting domain knowledge into a system produce a ceiling rather than a solution?</span></li>
+              <li>Carse, <i>Finite and Infinite Games</i> (1986)<span class="q">Not fully worked out yet. The frame keeps surfacing at the abstract end of conversations about human judgment and machine measurement.</span></li>
+              <li>Weil, <i>The Need for Roots</i> (1943)<span class="q">What would a measurement system look like that served genuine attention to work?</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
 <section id="skills">
   <div class="wrap">
     <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><polyline points="5 7 10 12 5 17"/><line x1="12" y1="17" x2="19" y2="17"/></svg></span>Skills &amp; Education</div>
@@ -468,7 +461,7 @@
         </div>
         <div class="grp">
           <div class="grp-h">Tools</div>
-          <div class="chips"><span class="chip">SQL</span><span class="chip"><img src="assets/logos/python.png" alt="">Python</span><span class="chip"><img src="assets/logos/r.svg" alt="">R</span><span class="chip">dbt</span><span class="chip"><img src="assets/logos/databricks.png" alt="">Databricks</span><span class="chip">Unity Catalog</span><span class="chip"><img src="assets/logos/tableau.png" alt="">Tableau</span><span class="chip"><img src="assets/logos/powerbi.png" alt="">Power BI</span><span class="chip">Mode</span><span class="chip">Statsig</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Looker</span><span class="chip">BigQuery</span><span class="chip">Quarto</span></div>
+          <div class="chips"><span class="chip">SQL</span><span class="chip"><img src="assets/logos/python.png" alt="">Python</span><span class="chip"><img src="assets/logos/r.svg" alt="">R</span><span class="chip">dbt</span><span class="chip"><img src="assets/logos/databricks.png" alt="">Databricks</span><span class="chip">Unity Catalog</span><span class="chip"><img src="assets/logos/tableau.png" alt="">Tableau</span><span class="chip"><img src="assets/logos/powerbi.png" alt="">Power BI</span><span class="chip">Mode</span><span class="chip">Statsig</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Looker</span><span class="chip">Quarto</span></div>
         </div>
         <div class="grp">
           <div class="grp-h">AI &amp; Automation</div>
