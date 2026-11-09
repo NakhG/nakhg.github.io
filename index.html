@@ -79,21 +79,6 @@
   .btn.primary:hover{background:#23252b}
   .btn svg{width:15px;height:15px;fill:currentColor}
 
-  /* ---- stat band: glass with holo edge ---- */
-  .stats{padding:0 0 64px}
-  .stats-card{
-    position:relative;border-radius:18px;background:var(--glass);
-    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,.75);box-shadow:0 12px 36px rgba(14,15,18,.07);
-    padding:28px 30px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;
-  }
-  .stats-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:18px 18px 0 0;background:var(--holo)}
-  @media(max-width:880px){.stats-card{grid-template-columns:repeat(2,1fr)}}
-  .stat .v{font-family:"Schibsted Grotesk";font-weight:800;font-size:29px;letter-spacing:-.02em}
-  .stat .l{margin-top:5px;font-size:12px;line-height:1.5;color:var(--muted)}
-  .spark path{stroke:var(--ink);stroke-width:2.4;fill:none;stroke-linecap:round}
-  .spark circle{fill:var(--ink)}
-  .spark .pop{fill:var(--hl);stroke:var(--ink);stroke-width:1.4}
 
   /* ---- sections ---- */
   section{padding:72px 0;border-top:1px solid var(--line)}
@@ -223,9 +208,9 @@
 
 <header class="hero">
   <div class="wrap anim d1">
-    <div class="eyebrow">Analytics &amp; BI Leader · Healthcare &amp; Technology</div>
+    <div class="eyebrow">Analytics &amp; BI Leader · Healthcare Operations</div>
     <h1>Analytics as a <mark>service</mark>, as <mark>products</mark>, and as a <mark>platform</mark>.</h1>
-    <p class="lede">I'm George. For 12+ years I've delivered decision support directly to executives, shipped analytics products (reports, data marts, chatbots, a reusable AI harness), and built the platform that keeps them coherent: a governed semantic layer, promotion paths, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work can explore, build, and decide with information themselves.</p>
+    <p class="lede">I'm George, and I've done every kind of analytics work healthcare operations needs: at an academic health system, at a cancer center through COVID, and at a fast-growing digital health company. I run experiments, deliver decision support directly to executives, ship analytics products (reports, data marts, chatbots, a reusable AI harness), and build the platform that keeps them coherent: a governed semantic layer, promotion paths, and telemetry on the analytics estate itself. I coach analysts and domain experts so the people closest to the work can explore, build, and decide with information themselves.</p>
     <div class="hero-meta">
       <span>HOCKESSIN, DE · WILMINGTON / PHILADELPHIA</span>
       <span>NOW: OPERATIONS ANALYTICS @ HINGE HEALTH</span>
@@ -240,24 +225,6 @@
   </div>
 </header>
 
-<div class="stats">
-  <div class="wrap">
-    <div class="stats-card anim d2">
-      <div class="stat"><div class="v">16–22×</div><div class="l">lower cost per query on the company's first semantic metric layer</div></div>
-      <div class="stat"><div class="v">+13.4pp</div><div class="l">lift from a targeted intervention, pre-registered observational study (n=12,197)</div></div>
-      <div class="stat"><div class="v">$1M+</div><div class="l">validated contract savings at MD Anderson</div></div>
-      <div class="stat">
-        <div class="v">117→290</div>
-        <svg class="spark" width="92" height="22" viewBox="0 0 92 22" role="img" aria-label="Sparkline showing workload rising from 117 to 290 units per worker per week">
-          <path d="M2 18 L18 17 L34 16.5 L50 14 L66 9 L86 3"/><circle class="pop" cx="86" cy="3" r="3.4"/>
-        </svg>
-        <div class="l">workload surge made visible by a capacity-stress metric</div>
-      </div>
-      <div class="stat"><div class="v">12+</div><div class="l">legacy reports consolidated or retired via usage telemetry</div></div>
-    </div>
-  </div>
-</div>
-
 <section id="range">
   <div class="wrap">
     <div class="sec-eyebrow"><span class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Range</div>
@@ -268,7 +235,7 @@
         <span class="tag">01 · Service</span>
         <h3>In the room</h3>
         <div class="what">Judgment delivered straight to a decision. I build the forecast, the model, the evaluation, and I'm in the meeting where it turns into committed budget and headcount. It's also where I see what's worth making permanent.</div>
-        <p class="case">The capacity model that sets how a fast-growing flexible workforce gets staffed each year, the supply-chain value analysis that turned benchmarking into validated contract savings, the impact reviews that tell leadership which programs to keep funding.</p>
+        <p class="case">The capacity model that sets how a fast-growing flexible workforce gets staffed each year, the supply-chain value analysis that turned benchmarking into validated contract savings, and the checks that make a revenue or client-performance figure hold up before it reaches executives or a client.</p>
       </div>
       <div class="mode anim d2">
         <span class="tag">02 · Products</span>
@@ -293,9 +260,9 @@
 
     <div class="job">
       <div class="job-top"><span class="co-wrap"><span class="logo"><span class="fb">HH</span><img src="assets/logos/hinge-health.png" alt="" onerror="this.remove()"></span><span class="co">Hinge Health</span></span><span class="when">2022 – PRESENT</span></div>
-      <div class="role-t">Senior Data Analyst, Operations Analytics (Analytics Engineering &amp; AI Platform)</div>
+      <div class="role-t">Senior Data Analyst, Operations Analytics</div>
       <div class="loc">REMOTE</div>
-      <div class="pos">Platform building, decision support, and AI enablement across support, care, and clinical operations, working with operations leadership, finance, data engineering, quality, and clinical teams.</div>
+      <div class="pos">Decision support, experiment design and analysis, research, BI, and analytics engineering across support, care, and clinical operations, working with operations leadership, finance, data engineering, quality, and clinical teams.</div>
       <ul>
         <li>Built my analytics team's <b>AI harness</b>: a shared repo of reusable skills, context, and patterns (primary author, 57% of commits), with data guardrails and a cost-accountability framework. Paired it with the company's <b>first semantic metric layer</b>, so non-technical leaders query governed data in plain English with no ticket, at 16–22× lower cost per query. Wrote the onboarding guide now cited alongside IT and Security docs, and coached no-Git staff to self-serve safely.</li>
         <li><b>Modernized support analytics end to end</b>: consolidated disparate reporting into the company's first unified, production-grade platform in dbt and Databricks (email, chat, and phone for a 124-agent org), with the data engineering to make core operations modelable, unified measurement standards, the org's first individual performance reporting, and a support chatbot. Usage telemetry then consolidated or retired over a dozen legacy reports.</li>
@@ -303,7 +270,7 @@
         <li>Designed and owned a <b>tiered care-team performance product</b> for 1+ years: leadership, manager, and individual views, coherent through dbt, replacing fragmented team-by-team reporting with one holistic methodology the people being measured can interrogate. Made the call on case-mix adjustment so workload difficulty doesn't distort evaluations, and landed it across heavily invested stakeholders through iterative change management.</li>
         <li>Run the team's <b>innovation-lab work</b>: mapped 20 compliance-sensitive metrics across five regulated domains and proposed a composite "Regulated Risk Signal" executive metric; ran a self-initiated, pre-registered observational study (n=12,197; permutation testing, adversarial validation) connecting care-team quality and efficiency to member engagement and outcomes, which estimated a +13.4pp lift from a targeted intervention; and built new ways to present information, from a <b>"Wordle for data"</b> quarterly KPI celebration to animated operational flow visualizations.</li>
         <li>Built a full <b>experimentation stack</b> for insurance verification: two sequential A/B tests in Statsig, attribution, an SMS launch, and a conversion-likelihood scoring model so outreach works from a prioritized list. Represented analytics on the Tableau to Mode BI migration.</li>
-        <li>Introduced <b>Jira</b> to the team and later led the migration to <b>Linear</b>, architecting the program structure (98 issues across 7 cycles) and deploying multi-agent AI infrastructure where agents create, label, and route follow-on work under a self-governance framework.</li>
+        <li>Make sure the <b>numbers that reach executives and clients hold up</b>: narrowed a revenue claim to a defensible range before it went to leadership, traced a client-facing resolution rate that a timestamp definition was understating, recommended one figure for a program's impact out of several in circulation, and ran a pre-launch design review on a quality-improvement test that caught a measure that would read low even with no real effect.</li>
       </ul>
     </div>
 
